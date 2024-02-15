@@ -10,4 +10,9 @@ public class Game : MonoBehaviour
     {
         m_RobotCharacter.ResetRobot();
     }
+    
+    public void DestroyRobot()
+    {
+        m_RobotCharacter.DestroyRobot();
+    }
 }

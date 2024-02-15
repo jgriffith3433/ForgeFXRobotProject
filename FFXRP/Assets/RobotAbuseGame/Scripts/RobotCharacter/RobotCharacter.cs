@@ -8,16 +8,36 @@ public class RobotCharacter : MonoBehaviour
 
     [SerializeField] private float m_ResetRobotPinTime = 1f;
 
-    public void ResetRobot()
+    private DetachableJoint[] m_DetachableJoints = null;
+
+    private void Awake()
     {
-        StartCoroutine(ResetRobotRoutine());
+        m_DetachableJoints = GetComponentsInChildren<DetachableJoint>();
     }
 
-    private IEnumerator ResetRobotRoutine()
+    public void ResetRobot()
     {
         var oldPinWeight = m_RobotIK.PuppetMasterPinWeight;
         m_RobotIK.PuppetMasterPinWeight = 1f;
-        yield return new WaitForSeconds(m_ResetRobotPinTime);
+        foreach (var detachableJoint in m_DetachableJoints)
+        {
+            if (!detachableJoint.IsAttached)
+            {
+                detachableJoint.Attach();
+            }
+        }
         m_RobotIK.PuppetMasterPinWeight = oldPinWeight;
     }
+
+    public void DestroyRobot()
+    {
+        foreach (var detachableJoint in m_DetachableJoints)
+        {
+            if (detachableJoint.IsAttached)
+            {
+                detachableJoint.Detach();
+            }
+        }
+    }
+
 }

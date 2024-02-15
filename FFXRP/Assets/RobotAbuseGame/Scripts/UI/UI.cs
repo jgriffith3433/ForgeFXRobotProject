@@ -10,4 +10,9 @@ public class UI : MonoBehaviour
     {
         m_Game.ResetRobot();
     }
+
+    public void OnPressDestroyButton()
+    {
+        m_Game.DestroyRobot();
+    }
 }
