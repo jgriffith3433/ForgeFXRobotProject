@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/RobotAbuseGame/Scenes/Game.unity
+    guid: b598911d434b92249b633cbfff100749
   m_configObjects: {}
