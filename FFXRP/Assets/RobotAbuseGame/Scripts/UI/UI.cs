@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -59,6 +60,14 @@ public class UI : MonoBehaviour
     public void OnPressDestroyButton()
     {
         m_Game.DestroyRobot();
+    }
+
+    public void OnPressQuitButton()
+    {
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#endif
+        Application.Quit();
     }
 
     private void OnHoldUpButton()
