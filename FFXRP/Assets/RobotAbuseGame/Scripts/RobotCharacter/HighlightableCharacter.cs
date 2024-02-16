@@ -22,7 +22,7 @@ public class HighlightableCharacter : MonoBehaviour
         }
     }
 
-    private void OnMouseEnter()
+    private void OnMouseOver()
     {
         m_Hovering = true;
         for (var i = 0; i < m_ChildMeshRenderers.Length; i++)
