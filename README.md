@@ -7,4 +7,4 @@ Welcome to the Robot Abuse Mini-Project, a Unity game developed for ForgeFX appl
 
 The camera can be moved with A, S, D, F / Up, Down, Left, Right or with the GUI. You can move the entire robot by clicking and dragging the torso with the mouse. Users can also manipulate the robot and detach/reattach the arms with the mouse. 
 
-Load "Game" and press play to enjoy the Robot Abuse Mini-Project
+Load RobotAbuseGame/Game.scene and press play to enjoy the Robot Abuse Mini-Project
